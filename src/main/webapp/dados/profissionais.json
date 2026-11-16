@@ -1,8 +1,4 @@
 [
-  {
-    "id": 1,
-    "nome": "Keira Knightley",
-    "profissao": "atriz",
-    "idade": 41
-  }
+  {"id":1,"nome":"Keira Knightley","idade":41,"tipo":"ATOR","especialidadeVocal":""},
+  {"id":2,"nome":"Joe Wright","idade":53,"tipo":"DIRETOR","estiloDirecao":"Drama de época"}
 ]

@@ -1,9 +1,1 @@
-[
-  {
-    "id": 1,
-    "titulo": "Orgulho e Preconceito",
-    "diretor": "Joe Wright",
-    "anoLancamento": 2005,
-    "genero": "romance"
-  }
-]
+[{"id":1,"titulo":"Orgulho e Preconceito","anoLancamento":2005,"genero":"Romance"}]

@@ -1,3 +1,1 @@
-<footer class="rodape">
-    SPOLBP2 &middot; Instituto Federal de S√£o Paulo &middot; Projeto Pr√°tico &middot; Cat√°logo de Filmes
-</footer>
+<footer class="rodape">Filmora ∑ Cat·logo pessoal de filmes ∑ SPOLBP2</footer>

@@ -1,0 +1,77 @@
+@startuml
+skinparam backgroundColor #14181c
+skinparam defaultFontColor white
+skinparam classBackgroundColor #202830
+skinparam classBorderColor #71808c
+skinparam ArrowColor #d4dbe0
+abstract class Profissional {
+  # id: int
+  # nome: String
+  # idade: int
+  + getId(): int
+  + getNome(): String
+  + getIdade(): int
+  + getTipo(): String
+}
+class Ator {
+  - especialidadeVocal: String
+  + incluir(): void
+  + alterar(): void
+  + excluir(): void
+  + listar(): List<Ator>
+}
+class Diretor {
+  - estiloDirecao: String
+  + incluir(): void
+  + alterar(): void
+  + excluir(): void
+  + listar(): List<Diretor>
+}
+class Roteirista {
+  - tipoRoteiro: String
+  + incluir(): void
+  + alterar(): void
+  + excluir(): void
+  + listar(): List<Roteirista>
+}
+class Filme {
+  - id: int
+  - titulo: String
+  - anoLancamento: int
+  - genero: String
+  + incluir(): void
+  + alterar(): void
+  + excluir(): void
+  + listar(): List<Filme>
+}
+class Participacao {
+  - id: int
+  - filmeId: int
+  - profissionalId: int
+  - tipoProfissional: String
+  - funcao: String
+  - personagem: String
+  + incluir(): void
+  + alterar(): void
+  + excluir(): void
+  + listar(): List<Participacao>
+}
+class Avaliacao {
+  - id: int
+  - filmeId: int
+  - nota: int
+  - comentario: String
+  - data: String
+  - reassistido: boolean
+  + incluir(): void
+  + alterar(): void
+  + excluir(): void
+  + listar(): List<Avaliacao>
+}
+Profissional <|-- Ator
+Profissional <|-- Diretor
+Profissional <|-- Roteirista
+Filme "1" -- "0..*" Participacao
+Profissional "1" -- "0..*" Participacao : profissionalId + tipo
+Filme "1" -- "0..*" Avaliacao
+@enduml

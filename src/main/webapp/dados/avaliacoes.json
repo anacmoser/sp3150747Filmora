@@ -1,10 +1,1 @@
-[
-  {
-    "id": 1,
-    "tituloFilme": "Orgulho e Preconceito",
-    "nota": 5,
-    "comentario": "Filme da minha vida",
-    "data": "2026-09-28",
-    "reassistido": true
-  }
-]
+[{"id":1,"filmeId":1,"nota":5,"comentario":"Filme da minha vida","data":"2026-09-28","reassistido":true}]
