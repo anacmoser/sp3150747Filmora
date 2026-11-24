@@ -1,44 +1,58 @@
 @startuml
+left to right direction
 skinparam backgroundColor #14181c
 skinparam defaultFontColor white
 skinparam classBackgroundColor #202830
 skinparam classBorderColor #71808c
 skinparam ArrowColor #d4dbe0
+skinparam interfaceBackgroundColor #202830
+skinparam interfaceBorderColor #71808c
+
+interface Identificavel {
+  + getId(): int
+  + setId(id: int): void
+}
+
 abstract class Profissional {
   # id: int
   # nome: String
   # idade: int
+  # tipo: String
   + getId(): int
+  + setId(id: int): void
   + getNome(): String
+  + setNome(nome: String): void
   + getIdade(): int
+  + setIdade(idade: int): void
   + getTipo(): String
-}
-class Ator {
-  - especialidadeVocal: String
+  + setTipo(tipo: String): void
   + incluir(): void
   + alterar(): void
   + excluir(): void
-  + listar(): List<Ator>
+  + listar(): List<Profissional>
+}
+
+class Ator {
+  - especialidadeVocal: String
+  + getEspecialidadeVocal(): String
+  + setEspecialidadeVocal(valor: String): void
 }
 class Diretor {
   - estiloDirecao: String
-  + incluir(): void
-  + alterar(): void
-  + excluir(): void
-  + listar(): List<Diretor>
+  + getEstiloDirecao(): String
+  + setEstiloDirecao(valor: String): void
 }
 class Roteirista {
   - tipoRoteiro: String
-  + incluir(): void
-  + alterar(): void
-  + excluir(): void
-  + listar(): List<Roteirista>
+  + getTipoRoteiro(): String
+  + setTipoRoteiro(valor: String): void
 }
 class Filme {
   - id: int
   - titulo: String
   - anoLancamento: int
   - genero: String
+  + getId(): int
   + incluir(): void
   + alterar(): void
   + excluir(): void
@@ -48,13 +62,14 @@ class Participacao {
   - id: int
   - filmeId: int
   - profissionalId: int
-  - tipoProfissional: String
   - funcao: String
   - personagem: String
+  + getId(): int
   + incluir(): void
-  + alterar(): void
   + excluir(): void
   + listar(): List<Participacao>
+  + excluirDoFilme(filmeId: int): void
+  + excluirDoProfissional(profissionalId: int): void
 }
 class Avaliacao {
   - id: int
@@ -63,15 +78,22 @@ class Avaliacao {
   - comentario: String
   - data: String
   - reassistido: boolean
+  + getId(): int
   + incluir(): void
   + alterar(): void
   + excluir(): void
   + listar(): List<Avaliacao>
+  + excluirDoFilme(filmeId: int): void
 }
+
+Identificavel <|.. Profissional
+Identificavel <|.. Filme
+Identificavel <|.. Participacao
+Identificavel <|.. Avaliacao
 Profissional <|-- Ator
 Profissional <|-- Diretor
 Profissional <|-- Roteirista
-Filme "1" -- "0..*" Participacao
-Profissional "1" -- "0..*" Participacao : profissionalId + tipo
-Filme "1" -- "0..*" Avaliacao
+Filme "1" -- "0..*" Participacao : filmeId
+Profissional "1" -- "0..*" Participacao : profissionalId
+Filme "1" -- "0..*" Avaliacao : filmeId
 @enduml

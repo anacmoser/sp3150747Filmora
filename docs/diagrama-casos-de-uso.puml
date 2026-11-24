@@ -6,32 +6,33 @@ skinparam usecaseBackgroundColor #202830
 skinparam usecaseBorderColor #71808c
 skinparam actorBorderColor white
 skinparam actorFontColor white
+skinparam packageBorderColor #71808c
+
 actor Usuario
 rectangle "Sistema Filmora" {
- package "Filmes" {
-  usecase "Incluir filme" as F1
-  usecase "Alterar filme" as F2
-  usecase "Excluir filme" as F3
-  usecase "Listar filmes" as F4
- }
- package "Profissionais" {
-  usecase "Incluir profissional" as P1
-  usecase "Alterar profissional" as P2
-  usecase "Excluir profissional" as P3
-  usecase "Listar profissionais" as P4
- }
- package "Participações" {
-  usecase "Vincular profissional a filme" as R1
-  usecase "Alterar participação" as R2
-  usecase "Excluir participação" as R3
-  usecase "Listar participações" as R4
- }
- package "Avaliações" {
-  usecase "Incluir avaliação" as A1
-  usecase "Alterar avaliação" as A2
-  usecase "Excluir avaliação" as A3
-  usecase "Listar avaliações" as A4
- }
+  package "Filmes" {
+    usecase "Incluir filme" as F1
+    usecase "Alterar filme" as F2
+    usecase "Excluir filme" as F3
+    usecase "Listar filmes" as F4
+  }
+  package "Profissionais" {
+    usecase "Incluir profissional" as P1
+    usecase "Alterar profissional" as P2
+    usecase "Excluir profissional" as P3
+    usecase "Listar profissionais" as P4
+  }
+  package "Participações" {
+    usecase "Vincular profissional a filme" as R1
+    usecase "Excluir participação" as R3
+    usecase "Listar participações" as R4
+  }
+  package "Avaliações" {
+    usecase "Incluir avaliação" as A1
+    usecase "Alterar avaliação" as A2
+    usecase "Excluir avaliação" as A3
+    usecase "Listar avaliações" as A4
+  }
 }
 Usuario -- F1
 Usuario -- F2
@@ -42,7 +43,6 @@ Usuario -- P2
 Usuario -- P3
 Usuario -- P4
 Usuario -- R1
-Usuario -- R2
 Usuario -- R3
 Usuario -- R4
 Usuario -- A1
